@@ -22,4 +22,12 @@ app.get('/:theme?', (req, res) => {
   }
 })
 
+app.get('/color', (req, res) => {
+  try {
+    const data = JSON.parse(readFileSync('data.json', 'utf8'))
+    res.render('index_color', { ...data, currency })
+  } catch (err) {
+    res.status(500).send('Could not open or parse data.json')
+  }
+})
 app.listen(port, () => console.log(`Running at http://localhost:${port}`))

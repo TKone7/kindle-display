@@ -19,3 +19,5 @@ fi
 
 firefox --screenshot http://localhost:$DISPLAY_SERVER_PORT --window-size=600,800
 pngcrush -c 0 screenshot.png display.png
+# firefox --screenshot http://localhost:$DISPLAY_SERVER_PORT --window-size=600,800 && pngcrush -c 0 screenshot.png display.png
+# firefox --screenshot http://localhost:$DISPLAY_SERVER_PORT/color --window-size=600,800 && gm convert  screenshot.png display.jpg
